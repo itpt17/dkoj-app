@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu+Condensed&display=swap');
+/* reset css */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+/* Animation */
+@keyframes scale-out{
+    from{
+        opacity: 0;
+        transform: scale(0);
+    }to{
+        opacity: 1;
+        transform: scale(1.01);
+    }
+}
+@keyframes scale-in{
+    from{
+        opacity: 1;
+        transform: scale(1);
+    }to{
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+/* page */
+.page-body{
+    min-height: 600px;
+    height: calc(100vh - 40px);
+    margin-top: 40px;
+}
+/* Commons */
+.no-select{
+    user-select: none !important;
+    cursor: default;
+}
+.bg-main{
+    background-color: #151D3B !important;
+}
+.bg-gray{
+    background-color: #e3e3e3;
+}
+.bg-danger{
+    background-color: #EE2624 !important;
+}
+.text-white{
+    color: white !important;
+}
+.text-light-gray{
+    color: #e3e3e3;
+}
+.text-infor{
+    color: #36B;
+}
+.f-14{
+    font-size: 14px !important;
+}
+.f-12{
+    font-size: 12px !important;
+}
+.f-30{
+    font-size: 30px;
+}
+/* Navbar */
+.dkoj-logo{
+    font-size: 1.25rem;
+    color: white;
+    font-weight: 700;
+}
+.dkoj-logo::first-letter{
+    color: #FFE61B !important;
+}
+.account-info{
+    top: calc(100% + 8px);
+    display: none;
+    animation: scale-out .5s ease-in-out;
+    transform-origin: 100% 0;
+}
+.account-info ul{
+    list-style: none;
+    width: 150px;
+    padding: 0px 0px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.7);
+    background-color: white;
+}
+.account-info ul::after{
+    content: '';
+    display: block;
+    position: absolute;
+    right: 28px;
+    border: 8px solid rgba(0,0,0,0);
+    border-bottom-color: white !important;
+    top: -16px;
+}
+.account-info ul::before{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 150px;
+    top: -16px;
+    height: 20px;
+}
+.account-info li{
+    padding: 3px 5px !important;
+}
+.account-info li:hover{
+    background-color: #e3e3e3;
+}
+.account-info li i{
+    width: 12px !important;
+}
+.dropdown:hover .account-info{
+    display: block;
+}
+/* sign options */
+.sign-option-item{
+    padding: 0px 8px;
+    position: relative;
+}
+.sign-option-item:hover{
+    color: white !important;
+    transition: .4s;
+}
+.sign-option-item:not(:last-child)::after{
+    content: '';
+    border-right: 1px solid white;
+    position: absolute;
+    top: 50%;
+    right: -1px;
+    transform: translateY(-50%);
+    height: 14px;
+}
+/* Clock */
+.clock{
+    transform: translateX(50%);
+}
+/* Login */
+.login-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+.login-container .row{
+    --bs-gutter-x: 0;
+}
+.login-form{
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.7);
+    height: 400px;
+}
+.exit-btn{
+    width: 70px;
+    height: 36px;
+    display: inline-block;
+    border-radius: 3px;
+    top: 10px;
+    right: 20px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.prev-btn{
+    width: 70px;
+    height: 36px;
+    display: inline-block;
+    border-radius: 3px;
+    top: 10px;
+    left: 20px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.exit-btn:hover,
+.prev-btn:hover{
+    background-color: #e3e3e3;
+    transition: .4s;
+}
+/* input fill */
+.input-fill{
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    line-height: 40px;
+    width: 100%;
+}
+.input-fill input{
+    border: none;
+    outline: none;
+    width: 90%;
+    padding: 0px 10px;
+}
+.input-focus{
+    border: 2px solid #EE2624;
+    line-height: 38px;
+    width: calc(100% - 2px) !important;
+}
+.input-fill i::after{
+    content: '';
+    display: block;
+    height: 20px;
+    position: absolute;
+    border-right: 1px solid #e3e3e3;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.login-btn{
+    font-weight: 700;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    margin-top: 5px;
+    border-radius: 4px;
+    transition: .4s;
+}
+.login-step-2{
+    top: 100px;
+}
+.login-loading{
+    width: 20px !important;
+    height: 20px !important;
+}
+/* Toast */
+.my-toast{
+    width: 250px;
+    height: 80px;
+    padding: 10px;
+    z-index: 1080;
+    top: 50px;
+    right: 10px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.7);
+    animation: scale-out .3s;
+}
+.my-invisible{
+    animation: scale-out 1s;
+}
+/* fb-btn */
+.kep-login-facebook{
+    width: 100% !important;
+}
+.other-login{
+    flex-direction: column;
+    position: relative;
+}
+.other-login button{
+    text-transform: none !important;
+    font-size: 12px !important;
+    width: 200px !important;
+    height: 40px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Nunito', sans-serif !important;
+    font-weight: normal !important;
+    margin: 3px 10px !important;
+    padding: none;
+    box-shadow: none !important;
+    border-radius: 3px !important;
+}
+.other-login button:nth-child(1){
+    visibility: hidden;
+}
+.other-login button:nth-child(1)::after{
+    position: absolute;
+    content: 'Đăng nhập với facebook';
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    visibility: visible;
+    background-color: #36B;
+    height: 40px !important;
+    line-height: 40px !important;
+    user-select: none !important;
+    border-radius: 3px !important;
+}
+.other-login button:nth-child(1):hover::after{
+    background-color: #36C;
+    transition: .4s;
+}
+.other-login button:nth-child(2){
+    background-color: #EE2624 !important;
+    color: white !important;    
+    width: 100% !important;
+    user-select: none;
+}
+.other-login button:nth-child(2):hover{
+    background-color: #FA2624 !important;
+    transition: .4s;
+}
+.other-login button svg{
+    display: none !important;
+}
+.other-login button div{
+    display: none;
+}
